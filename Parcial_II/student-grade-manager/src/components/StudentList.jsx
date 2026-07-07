@@ -5,6 +5,31 @@ function StudentList(props) {
     <div className="card">
       <h2>Lista de estudiantes</h2>
 
+      <div className="acciones filtros">
+        <button
+          className={props.filtro === "Todos" ? "btn activo" : "btn"}
+          onClick={() => props.setFiltro("Todos")}
+        >
+          Todos
+        </button>
+
+        <button
+          className={props.filtro === "Aprobados" ? "btn activo" : "btn"}
+          onClick={() => props.setFiltro("Aprobados")}
+        >
+          Aprobados
+        </button>
+
+        <button
+          className={props.filtro === "Reprobados" ? "btn activo" : "btn"}
+          onClick={() => props.setFiltro("Reprobados")}
+        >
+          Reprobados
+        </button>
+      </div>
+
+      <p className="nota">Filtro seleccionado: {props.filtro}</p>
+
       {props.totalStudents === 0 ? (
         <p className="mensaje-regular">No hay estudiantes registrados todavía.</p>
       ) : props.students.length === 0 ? (

@@ -83,39 +83,11 @@ function App() {
         </div>
       </div>
 
-      <div className="card">
-        <h2>Filtro de estudiantes</h2>
-
-        <div className="acciones filtros">
-          <button
-            className={filtro === "Todos" ? "btn activo" : "btn"}
-            onClick={() => setFiltro("Todos")}
-          >
-            Todos
-          </button>
-
-          <button
-            className={filtro === "Aprobados" ? "btn activo" : "btn"}
-            onClick={() => setFiltro("Aprobados")}
-          >
-            Aprobados
-          </button>
-
-          <button
-            className={filtro === "Reprobados" ? "btn activo" : "btn"}
-            onClick={() => setFiltro("Reprobados")}
-          >
-            Reprobados
-          </button>
-        </div>
-
-        <p className="nota">Filtro seleccionado: {filtro}</p>
-      </div>
-
       <StudentList
         students={filteredStudents}
         totalStudents={totalStudents}
         filtro={filtro}
+        setFiltro={setFiltro}
         onDelete={deleteStudent}
       />
 
